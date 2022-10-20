@@ -30,6 +30,7 @@ stages:
         npm install i -g @angular/cli
         npm install
         ionic build --prod
+        ionic s 
       displayName: 'ionic install and build'
 
 
