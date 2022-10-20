@@ -1,8 +1,8 @@
 {
-  "defaultProject": "app",
+  "defaultProject": "RentACar-FrontEnd",
   "projects": {
-    "Angular7": {
-      "name": "app",
+    "RentACar-FrontEnd": {
+      "name": "RentACar-FrontEnd",
       "integrations": {},
       "type": "angular"
     }
