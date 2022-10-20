@@ -29,6 +29,6 @@ stages:
         npm install i -g @ionic/cli
         npm install i -g @angular/cli
         npm install
-        ionic init "RentA Car" --type=angular
+        ionic init "app" --type=angular
         ionic build 
       displayName: 'ionic install and build'
