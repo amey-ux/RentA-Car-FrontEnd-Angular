@@ -4,7 +4,11 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- master
+  branches:
+    include: [master]# branch names which will trigger a build
+    # exclude: [ string ] # branch names which will not
+  tags:
+    include: [build_pipeline]
 
 pool:
   vmImage: ubuntu-latest
@@ -23,6 +27,8 @@ stages:
 
     - script: |
         npm install i -g @ionic/cli
+        npm install i -g @angular/cli
         npm install
-        ionic build --prod
+        ionic init "RentA Car" --type=angular
+        ionic build 
       displayName: 'ionic install and build'
