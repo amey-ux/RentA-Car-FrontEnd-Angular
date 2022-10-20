@@ -1,5 +1,10 @@
 {
-  "name": "app",
-  "integrations": {},
-  "type": "angular"
+  "defaultProject": "app",
+  "projects": {
+    "Angular7": {
+      "name": "app",
+      "integrations": {},
+      "type": "angular"
+    }
+  }
 }
