@@ -30,17 +30,16 @@ stages:
         npm install i -g @angular/cli
         npm install
         ionic build --prod
-        ionic s 
       displayName: 'ionic install and build'
 
 
-      # - task: ArchiveFiles@2
-      # inputs:
-      #   rootFolderOrFile: '$(Build.BinariesDirectory)'
-      #   includeRootFolder: true
-      #   archiveType: 'zip'
-      #   archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-      #   replaceExistingArchive: true
+      - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: RentA-Car-FrontEnd-Angular\src
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+        replaceExistingArchive: true
 
 
       # - task: PublishBuildArtifacts@1
