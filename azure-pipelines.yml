@@ -25,34 +25,22 @@ stages:
         versionSpec: '16.14.2'
       displayName: 'Install Node.js'
     
+   
     # - script: |
-    #     echo '$(Build.BinariesDirectory)'
-    #     echo '$(Build.ArtifactStagingDirectory)'
-    #     pwd 
-    #     ls -l 
-    - script: |
-        npm install i -g @ionic/cli
-        npm install i -g @angular/cli
-        npm install
-        ionic build --prod
-      displayName: 'ionic install and build'
+    #     npm install i -g @ionic/cli
+    #     npm install i -g @angular/cli
+    #     npm install
+    #     ionic build --prod
+    #   displayName: 'ionic install and build'
 
 
-    - task: ArchiveFiles@2
-      inputs:
-        rootFolderOrFile: '$(Build.SourcesDirectory)/www'
-        includeRootFolder: true
-        archiveType: 'zip'
-        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-        replaceExistingArchive: true
+    # - task: ArchiveFiles@2
+    #   inputs:
+    #     rootFolderOrFile: '$(Build.SourcesDirectory)/www'
+    #     includeRootFolder: true
+    #     archiveType: 'zip'
+    #     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    #     replaceExistingArchive: true
 
-    - script: |
-        ls -l '$(Build.ArtifactStagingDirectory)'
+  
         
-
-
-      # - task: PublishBuildArtifacts@1
-      # inputs:
-      #   PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-      #   ArtifactName: 'drop'
-      #   publishLocation: 'Container'
