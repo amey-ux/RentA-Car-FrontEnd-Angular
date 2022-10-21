@@ -33,9 +33,9 @@ stages:
       displayName: 'ionic install and build'
 
 
-      - task: ArchiveFiles@2
+    - task: ArchiveFiles@2
       inputs:
-        rootFolderOrFile: RentA-Car-FrontEnd-Angular\src
+        rootFolderOrFile: RentA-Car-FrontEnd-Angular\www
         includeRootFolder: false
         archiveType: 'zip'
         archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
