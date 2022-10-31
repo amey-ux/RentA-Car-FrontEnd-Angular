@@ -3,27 +3,37 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
+# trigger:
+#   branches:
+#     include: [master]# branch names which will trigger a build
+#     # exclude: [ string ] # branch names which will not
+#   tags:
+#     include: [build_pipeline]
+
+
 trigger:
-  branches:
-    include: [master]# branch names which will trigger a build
-    # exclude: [ string ] # branch names which will not
   tags:
-    include: [build_pipeline]
+    include:
+    - v*
+  branches:
+    include:
+    - master
+
 
 pool:
   vmImage: ubuntu-latest
 
-stages:
-- stage: Build
-  displayName: Build stage
-  jobs:  
-  - job: Build_Server
-    displayName: Prepare build environment
-    steps:
-    - task: NodeTool@0
-      inputs:
-        versionSpec: '16.14.2'
-      displayName: 'Install Node.js'
+# stages:
+# - stage: Build
+#   displayName: Build stage
+#   jobs:  
+#   - job: Build_Server
+#     displayName: Prepare build environment
+#     steps:
+#     - task: NodeTool@0
+#       inputs:
+#         versionSpec: '16.14.2'
+#       displayName: 'Install Node.js'
     
    
     # - script: |
