@@ -23,17 +23,17 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-# stages:
-# - stage: Build
-#   displayName: Build stage
-#   jobs:  
-#   - job: Build_Server
-#     displayName: Prepare build environment
-#     steps:
-#     - task: NodeTool@0
-#       inputs:
-#         versionSpec: '16.14.2'
-#       displayName: 'Install Node.js'
+stages:
+- stage: Build
+  displayName: Build stage
+  jobs:  
+  - job: Build_Server
+    displayName: Prepare build environment
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '16.14.2'
+      displayName: 'Install Node.js'
     
    
     # - script: |
