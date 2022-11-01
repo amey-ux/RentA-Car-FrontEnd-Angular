@@ -11,12 +11,9 @@
 #     include: [release*]
 
 trigger:
-  -master
-  -refs/master/release*
-# trigger:
-#   tags:
-#     include:
-#     - v*
+  tags:
+    include:
+    - v*
 #   branches:
 #     include:
 #     - master
