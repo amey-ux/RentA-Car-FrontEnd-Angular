@@ -21,9 +21,9 @@ stages:
 - stage: Build
   displayName: Build stage
   jobs:  
-  # - job: Build_Server
-  #   displayName: Prepare build environment
-  #   steps:
+  - job: Build_Server
+    displayName: Prepare build environment
+    steps:
   #   - task: NodeTool@0
   #     inputs:
   #       versionSpec: '16.14.2'
