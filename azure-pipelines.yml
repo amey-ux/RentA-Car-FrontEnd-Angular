@@ -31,6 +31,7 @@ stages:
     
 
     - script: |
+        pwd
         echo '$(Build.SourcesDirectory)'
         echo '$(Pipeline.Workspace)'
         echo '$(Build.ArtifactStagingDirectory)'
