@@ -30,33 +30,32 @@ stages:
       displayName: 'Install Node.js'
     
 
-    - script: |
-        pwd
-        echo '$(Build.SourcesDirectory)'
-        echo '$(Pipeline.Workspace)'
-        ls -l '$(Pipeline.Workspace)/a'
-        echo '$(Build.ArtifactStagingDirectory)'
-      displayName: test
-   
     # - script: |
-    #     npm install i -g @ionic/cli
-    #     npm install i -g @angular/cli
-    #     npm install
-    #     ionic build --prod
+    #     pwd
     #     echo '$(Build.SourcesDirectory)'
-    #   displayName: 'ionic install and build'
+    #     echo '$(Pipeline.Workspace)'
+    #     ls -l '$(Pipeline.Workspace)/a'
+    #     echo '$(Build.ArtifactStagingDirectory)'
+    #   displayName: test
+   
+    - script: |
+        npm install i -g @ionic/cli
+        npm install i -g @angular/cli
+        npm install
+        ionic build --prod
+      displayName: 'ionic install and build'
 
 
-    # - task: ArchiveFiles@2
-    #   inputs:
-    #     rootFolderOrFile: '$(Build.SourcesDirectory)/www'
-    #     includeRootFolder: true
-    #     archiveType: 'zip'
-    #     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    #     replaceExistingArchive: true
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: '$(Build.SourcesDirectory)/www'
+        includeRootFolder: true
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+        replaceExistingArchive: true
 
-    # - task: PublishPipelineArtifact@1
-    #   inputs:
-    #       targetPath: '$(Pipeline.Workspace)/a'
-    #       publishLocation: 'pipeline' 
+    - task: PublishPipelineArtifact@1
+      inputs:
+          targetPath: '$(Pipeline.Workspace)/a'
+          publishLocation: 'pipeline' 
         
