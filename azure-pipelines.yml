@@ -24,16 +24,17 @@ stages:
   - job: Build_Server
     displayName: Prepare build environment
     steps:
-  #   - task: NodeTool@0
-  #     inputs:
-  #       versionSpec: '16.14.2'
-  #     displayName: 'Install Node.js'
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '16.14.2'
+      displayName: 'Install Node.js'
     
 
     - script: |
         pwd
         echo '$(Build.SourcesDirectory)'
         echo '$(Pipeline.Workspace)'
+        ls -l '$(Pipeline.Workspace)/a'
         echo '$(Build.ArtifactStagingDirectory)'
       displayName: test
    
@@ -56,6 +57,6 @@ stages:
 
     # - task: PublishPipelineArtifact@1
     #   inputs:
-    #       targetPath: '$(Pipeline.Workspace)'
+    #       targetPath: '$(Pipeline.Workspace)/a'
     #       publishLocation: 'pipeline' 
         
