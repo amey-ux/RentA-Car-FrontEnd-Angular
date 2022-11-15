@@ -25,6 +25,7 @@ stages:
     - task: InstallAppleCertificate@2
       inputs:
         certSecureFile: 'Certificates.p12'
+        certPwd: $(certpass)
         keychain: 'temp'
         
         
