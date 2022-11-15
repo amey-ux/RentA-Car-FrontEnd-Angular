@@ -17,14 +17,16 @@ stages:
     displayName: Build_ios
     steps:
     
-    - script: |
-        xcode-select -p
+    # - script: |
+    #     xcode-select -p
     
     
-    # - task: InstallAppleCertificate@2
-    #   inputs:
-    #     certSecureFile: 'na'
-    #     keychain: 'temp'
+    -
+    - task: InstallAppleCertificate@2
+      inputs:
+        certSecureFile: 'Certificates.p12'
+        keychain: 'temp'
+        
         
     # - task: InstallAppleProvisioningProfile@1
     #   inputs:
