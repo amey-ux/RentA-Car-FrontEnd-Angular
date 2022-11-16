@@ -15,13 +15,7 @@ stages:
   jobs:  
   - job: Build_Server
     displayName: Build_ios
-    steps:
-    
-    # - script: |
-    #     xcode-select -p
-    
-    
-    
+    steps: 
     - task: InstallAppleCertificate@2
       inputs:
         certSecureFile: 'Certificates.p12'
@@ -36,7 +30,7 @@ stages:
     
     - script: |
         npm install i -g @ionic/cli
-        npx cap init 
+        npm install @capacitor/core @capacitor/cli 
         ionic cap build ios --prod
 
 
