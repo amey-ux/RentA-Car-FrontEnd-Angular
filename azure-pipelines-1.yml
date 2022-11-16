@@ -36,6 +36,7 @@ stages:
     
     - script: |
         npm install i -g @ionic/cli
+        npx cap init 
         ionic cap build ios --prod
 
 
