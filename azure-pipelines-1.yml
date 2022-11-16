@@ -35,6 +35,7 @@ stages:
     #     provProfileSecureFile: 'htftd'
     
     - script: |
+        npm install i -g @ionic/cli
         ionic cap build ios --prod
 
 
@@ -42,7 +43,7 @@ stages:
       inputs:
         actions: 'build archive'
         packageApp: true
-        xcWorkspacePath: 
+        xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
         archivePath: '$(Build.ArtifactStagingDirectory)'
         signingOption: 'auto'
         xcodeVersion: default
