@@ -34,11 +34,15 @@ stages:
     #     provisioningProfileLocation: 'secureFiles'
     #     provProfileSecureFile: 'htftd'
 
-    # - task: Xcode@5
-    #   inputs:
-    #     actions: 'build'
-    #     scheme: ''
-    #     sdk: 'iphoneos'
-    #     configuration: 'Release'
-    #     xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
-    #     xcodeVersion: 'default' # Options: 8, 9, 10, 11, 12, default, specifyPath
+    - task: Xcode@5
+      inputs:
+        actions: 'build archive'
+        packageApp: true
+        archivePath: '$(Build.ArtifactStagingDirectory)'
+        signingOption: 'auto'
+        xcodeVersion: default
+
+    - task: PublishPipelineArtifact@1
+      inputs:
+          targetPath: '$(Pipeline.Workspace)/a'
+          publishLocation: 'pipeline' 
