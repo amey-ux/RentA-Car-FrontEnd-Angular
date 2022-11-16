@@ -3,7 +3,9 @@
   "projects": {
     "RentACar-FrontEnd": {
       "name": "RentACar-FrontEnd",
-      "integrations": {},
+      "integrations": {
+        "capacitor": {}
+      },
       "type": "angular"
     }
   }
