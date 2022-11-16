@@ -33,11 +33,16 @@ stages:
     #   inputs:
     #     provisioningProfileLocation: 'secureFiles'
     #     provProfileSecureFile: 'htftd'
+    
+    - script: |
+        ionic cap build ios --prod
+
 
     - task: Xcode@5
       inputs:
         actions: 'build archive'
         packageApp: true
+        xcWorkspacePath: 
         archivePath: '$(Build.ArtifactStagingDirectory)'
         signingOption: 'auto'
         xcodeVersion: default
