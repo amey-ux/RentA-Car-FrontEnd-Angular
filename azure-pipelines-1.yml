@@ -9,6 +9,11 @@ trigger:
 pool:
   vmImage: 'macos-latest'
 
+
+variables:
+  sdk: 'macOS 12.3'
+  configuration: 'Release'
+
 stages:
 - stage: Build
   displayName: Build stage
@@ -31,7 +36,6 @@ stages:
     - script: |
         npm install i -g @ionic/cli
         npm install @capacitor/core @capacitor/cli 
-        xcodebuild -showsdks
         ionic cap build ios --prod
 
 
