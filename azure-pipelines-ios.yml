@@ -34,23 +34,39 @@ stages:
       inputs:
         provisioningProfileLocation: 'secureFiles'
         provProfileSecureFile: 'FlagshipInspect.mobileprovision'
-    
-    - script: |
+        removeProfile: true
+
+    - script: |                       #install ioinic and capacitor 
         npm install i -g @ionic/cli
         npm install @capacitor/core @capacitor/cli 
         ionic cap build ios --prod
 
 
-    - task: Xcode@5
+    - task: Xcode@5 #Xcode build and archive task 
       inputs:
-        actions: 'build archive'
-        packageApp: true
+        actions: 'build archive' 
         sdk: '$(sdk)'
         configuration: '$(configuration)'
         xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
-        archivePath: '$(Build.ArtifactStagingDirectory)'
-        signingOption: 'auto'
         xcodeVersion: default
+
+        # Package options
+        packageApp: true
+        archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
+        exportPath: 'output/$(SDK)/$(Configuration)/'
+        exportOptions: 'auto'
+        exportMethod: 'ad-hoc'
+
+        # Signing & provisioning
+        signingOption: 'auto'
+        
+       
+    - task: CopyFiles@2  #copy ipa files to artifact directory 
+      inputs:
+        contents: '**/*.ipa'
+        targetFolder: '$(build.artifactStagingDirectory)'
+        overWrite: true
+        flattenFolders: true
 
     - task: PublishPipelineArtifact@1
       inputs:
