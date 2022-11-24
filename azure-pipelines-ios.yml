@@ -41,24 +41,25 @@ stages:
         npm install i -g @ionic/cli
         npm install @capacitor/core @capacitor/cli 
         ionic cap build ios --prod
+        xcodebuild  -workspace /Users/runner/work/1/s/ios/App/App.xcodeproj/project.xcworkspace -list
 
 
-    - task: Xcode@5 #Xcode build and archive task 
-      inputs:
-        actions: 'build' 
-        sdk: '$(sdk)'
-        configuration: '$(configuration)'
-        xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
-        xcodeVersion: default
-        # Package options
-        packageApp: true 
-        # archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
-        # exportPath: 'output/$(SDK)/$(Configuration)/'
-        # exportOptions: 'auto'
-        # exportMethod: 'ad-hoc'
-        # Signing & provisioning
-        signingOption: 'auto'
-        teamId: '$(teamId)'
+    # - task: Xcode@5 #Xcode build and archive task 
+    #   inputs:
+    #     actions: 'build' 
+    #     sdk: '$(sdk)'
+    #     configuration: '$(configuration)'
+    #     xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
+    #     xcodeVersion: default
+    #     # Package options
+    #     packageApp: true 
+    #     # archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
+    #     # exportPath: 'output/$(SDK)/$(Configuration)/'
+    #     # exportOptions: 'auto'
+    #     # exportMethod: 'ad-hoc'
+    #     # Signing & provisioning
+    #     signingOption: 'auto'
+    #     teamId: '$(teamId)'
         
        
     # - task: CopyFiles@2  #copy ipa files to artifact directory 
