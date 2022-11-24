@@ -10,28 +10,30 @@ pool:
   vmImage: 'macos-latest'
 
 
-variables:
-  sdk: 'macOS 12.3'
-  configuration: 'Release'
-
 stages:
 - stage: Build
   displayName: Build stage
   jobs:  
   - job: Build_Server
     displayName: Build_ios
+
+    variables:
+      sdk: 'macosx12.3'
+      configuration: 'Release'
+
     steps: 
     - task: InstallAppleCertificate@2
       inputs:
         certSecureFile: 'Certificates.p12'
         certPwd: $(certpass)
         keychain: 'temp'
+        deleteCert: true
         
         
-    # - task: InstallAppleProvisioningProfile@1
-    #   inputs:
-    #     provisioningProfileLocation: 'secureFiles'
-    #     provProfileSecureFile: 'htftd'
+    - task: InstallAppleProvisioningProfile@1
+      inputs:
+        provisioningProfileLocation: 'secureFiles'
+        provProfileSecureFile: 'FlagshipInspect.mobileprovision'
     
     - script: |
         npm install i -g @ionic/cli
