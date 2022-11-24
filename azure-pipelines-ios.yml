@@ -44,31 +44,29 @@ stages:
 
     - task: Xcode@5 #Xcode build and archive task 
       inputs:
-        actions: 'build archive' 
+        actions: 'build' 
         sdk: '$(sdk)'
         configuration: '$(configuration)'
         xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
         xcodeVersion: default
-
         # Package options
-        packageApp: true
-        archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
-        exportPath: 'output/$(SDK)/$(Configuration)/'
-        exportOptions: 'auto'
-        exportMethod: 'ad-hoc'
-
-        # Signing & provisioning
-        signingOption: 'auto'
+        packageApp: false 
+        # archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
+        # exportPath: 'output/$(SDK)/$(Configuration)/'
+        # exportOptions: 'auto'
+        # exportMethod: 'ad-hoc'
+        # # Signing & provisioning
+        # signingOption: 'auto'
         
        
-    - task: CopyFiles@2  #copy ipa files to artifact directory 
-      inputs:
-        contents: '**/*.ipa'
-        targetFolder: '$(build.artifactStagingDirectory)'
-        overWrite: true
-        flattenFolders: true
+    # - task: CopyFiles@2  #copy ipa files to artifact directory 
+    #   inputs:
+    #     contents: '**/*.ipa'
+    #     targetFolder: '$(build.artifactStagingDirectory)'
+    #     overWrite: true
+    #     flattenFolders: true
 
-    - task: PublishPipelineArtifact@1
-      inputs:
-          targetPath: '$(Pipeline.Workspace)/a'
-          publishLocation: 'pipeline' 
+    # - task: PublishPipelineArtifact@1
+    #   inputs:
+    #       targetPath: '$(Pipeline.Workspace)/a'
+    #       publishLocation: 'pipeline' 
