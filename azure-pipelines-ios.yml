@@ -18,7 +18,7 @@ stages:
     displayName: Build_ios
 
     variables:
-      sdk: 'macosx12.3'
+      sdk: 'iphoneos'
       configuration: 'Release'
 
     steps: 
@@ -50,13 +50,13 @@ stages:
         xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
         xcodeVersion: default
         # Package options
-        packageApp: false 
+        packageApp: true 
         # archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
         # exportPath: 'output/$(SDK)/$(Configuration)/'
         # exportOptions: 'auto'
         # exportMethod: 'ad-hoc'
-        # # Signing & provisioning
-        # signingOption: 'auto'
+        # Signing & provisioning
+        signingOption: 'auto'
         
        
     # - task: CopyFiles@2  #copy ipa files to artifact directory 
