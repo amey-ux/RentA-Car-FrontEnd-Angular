@@ -53,7 +53,7 @@ stages:
         sdk: '$(sdk)'
         configuration: '$(configuration)'
         xcWorkspacePath: '**/*.xcodeproj/*.xcworkspace'
-        xcodeVersion: 13
+        xcodeVersion: 'default'
         # Package options
         packageApp: true 
         # archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
@@ -67,14 +67,14 @@ stages:
         teamId: '$(teamId)'
         
        
-    - task: CopyFiles@2  #copy ipa files to artifact directory 
-      inputs:
-        contents: '**/*.ipa'
-        targetFolder: '$(build.artifactStagingDirectory)'
-        overWrite: true
-        flattenFolders: true
+    # - task: CopyFiles@2  #copy ipa files to artifact directory 
+    #   inputs:
+    #     contents: '**/*.ipa'
+    #     targetFolder: '$(build.artifactStagingDirectory)'
+    #     overWrite: true
+    #     flattenFolders: true
 
-    - task: PublishPipelineArtifact@1
-      inputs:
-          targetPath: '$(Pipeline.Workspace)/a'
-          publishLocation: 'pipeline' 
+    # - task: PublishPipelineArtifact@1
+    #   inputs:
+    #       targetPath: '$(Pipeline.Workspace)/a'
+    #       publishLocation: 'pipeline' 
