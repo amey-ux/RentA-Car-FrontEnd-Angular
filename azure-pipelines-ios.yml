@@ -64,7 +64,7 @@ stages:
         signingOption: 'auto'
         # signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
         # provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
-        # teamId: '$(teamId)'
+        teamId: '$(teamId)'
         
        
     # - task: CopyFiles@2  #copy ipa files to artifact directory 
