@@ -37,15 +37,15 @@ stages:
         provProfileSecureFile: 'FlagshipInspect.mobileprovision'
         removeProfile: true
 
+    - script: |                       #install ioinic and capacitor 
+        npm install i -g @ionic/cli
+        npm install @capacitor/core @capacitor/cli 
+        ionic cap build ios --prod
+
     - task: CocoaPods@0
-      inputs:
+      inputs:    
         forceRepoUpdate: false
-
-    # - script: |                       #install ioinic and capacitor 
-    #     npm install i -g @ionic/cli
-    #     npm install @capacitor/core @capacitor/cli 
-    #     ionic cap build ios --prod
-
+        workingDirectory: '$(Build.SourcesDirectory)/ios/App'
 
     - task: Xcode@5 #Xcode build and archive task 
       inputs:
