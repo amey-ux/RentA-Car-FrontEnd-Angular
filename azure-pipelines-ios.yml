@@ -25,7 +25,7 @@ stages:
     steps: 
     - task: InstallAppleCertificate@2
       inputs:
-        certSecureFile: 'Untitled.p12'
+        certSecureFile: 'Test.p12'
         certPwd: $(certpass)
         keychain: 'temp'
         deleteCert: true
@@ -61,9 +61,9 @@ stages:
         # exportOptions: 'auto'
         # exportMethod: 'ad-hoc'
         # Signing & provisioning
-        signingOption: 'manual'
-        signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
-        provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
+        signingOption: 'auto'
+        # signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
+        # provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
         # teamId: '$(teamId)'
         
        
