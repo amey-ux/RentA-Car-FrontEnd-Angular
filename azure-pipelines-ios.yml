@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'macos-11'
+  vmImage: 'macos-12'
 
 
 stages:
@@ -53,7 +53,7 @@ stages:
         sdk: '$(sdk)'
         configuration: '$(configuration)'
         xcWorkspacePath: '**/*.xcodeproj/*.xcworkspace'
-        xcodeVersion: 12.5
+        xcodeVersion: 13
         # Package options
         packageApp: true 
         # archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
@@ -61,10 +61,10 @@ stages:
         # exportOptions: 'auto'
         # exportMethod: 'ad-hoc'
         # Signing & provisioning
-        signingOption: 'auto'
-        # signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
-        # provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
-        teamId: '$(teamId)'
+        signingOption: 'manual'
+        signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
+        provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
+        # teamId: '$(teamId)'
         
        
     # - task: CopyFiles@2  #copy ipa files to artifact directory 
