@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.example.app',
+  appId: 'Trax.Flagship.Inspect',
   appName: 'rent-acar-front-end',
   webDir: 'www',
   bundledWebRuntime: false
