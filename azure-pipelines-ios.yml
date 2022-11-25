@@ -45,6 +45,7 @@ stages:
 
     - task: CocoaPods@0
       inputs:
+        workingDirectory: '$(Build.SourcesDirectory)/ios'
         forceRepoUpdate: true
 
 
@@ -53,7 +54,7 @@ stages:
         actions: 'build' 
         sdk: '$(sdk)'
         configuration: '$(configuration)'
-        xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
+        xcWorkspacePath: '**/*.xcodeproj/*.xcworkspace'
         xcodeVersion: default
         # Package options
         packageApp: true 
