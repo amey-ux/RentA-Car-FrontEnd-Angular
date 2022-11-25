@@ -43,11 +43,6 @@ stages:
         npm install @capacitor/core @capacitor/cli 
         ionic cap build ios --prod
 
-    - task: CocoaPods@0
-      inputs:
-        workingDirectory: '$(Build.SourcesDirectory)/ios'
-        forceRepoUpdate: true
-
 
     - task: Xcode@5 #Xcode build and archive task 
       inputs:
