@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'macos-latest'
+  vmImage: 'macos-11'
 
 
 stages:
@@ -53,7 +53,7 @@ stages:
         sdk: '$(sdk)'
         configuration: '$(configuration)'
         xcWorkspacePath: '**/*.xcodeproj/*.xcworkspace'
-        xcodeVersion: 12
+        xcodeVersion: 12.5
         # Package options
         packageApp: true 
         # archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
