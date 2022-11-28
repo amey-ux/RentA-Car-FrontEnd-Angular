@@ -41,28 +41,28 @@ stages:
         npm install i -g @ionic/cli
         npm install @capacitor/core @capacitor/cli
         sudo arch -x86_64 gem install ffi 
-      # ionic cap build ios --prod
-      # cd ios/App/App
-      # pod install
+        ionic cap build ios --prod
+        cd ios/App/App
+        arch -x86_64 pod install
 
-    # - task: Xcode@5 #Xcode build and archive task 
-    #   inputs:
-    #     actions: 'build archive' 
-    #     sdk: '$(sdk)'
-    #     configuration: '$(configuration)'
-    #     xcWorkspacePath: '**/*.xcodeproj/*.xcworkspace'
-    #     xcodeVersion: default
-    #     # Package options
-    #     packageApp: true 
-    #     archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
-    #     # exportPath: 'output/$(SDK)/$(Configuration)/'
-    #     # exportOptions: 'auto'
-    #     # exportMethod: 'ad-hoc'
-    #     # Signing & provisioning
-    #     signingOption: 'manual'
-    #     signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
-    #     provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
-    #     # teamId: '$(teamId)'
+    - task: Xcode@5 #Xcode build and archive task 
+      inputs:
+        actions: 'build archive' 
+        sdk: '$(sdk)'
+        configuration: '$(configuration)'
+        xcWorkspacePath: '**/*.xcodeproj/*.xcworkspace'
+        xcodeVersion: default
+        # Package options
+        packageApp: true 
+        archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
+        # exportPath: 'output/$(SDK)/$(Configuration)/'
+        # exportOptions: 'auto'
+        # exportMethod: 'ad-hoc'
+        # Signing & provisioning
+        signingOption: 'manual'
+        signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
+        provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
+        # teamId: '$(teamId)'
         
        
     # - task: CopyFiles@2  #copy ipa files to artifact directory 
