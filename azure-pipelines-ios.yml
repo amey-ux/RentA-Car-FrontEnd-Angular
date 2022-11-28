@@ -25,7 +25,7 @@ stages:
     steps: 
     - task: InstallAppleCertificate@2
       inputs:
-        certSecureFile: 'Test.p12'
+        certSecureFile: 'Dis_Certificates.p12'
         certPwd: $(certpass)
         keychain: 'temp'
         deleteCert: true
@@ -57,7 +57,7 @@ stages:
         archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
         exportPath: 'output/$(SDK)/$(Configuration)/'
         exportOptions: 'auto'
-        exportMethod: 'ad-hoc'
+        # exportOptionsPlist: 
         # Signing & provisioning
         signingOption: 'auto'
         teamId: '$(teamId)'
