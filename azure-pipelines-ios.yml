@@ -56,8 +56,8 @@ stages:
         packageApp: true 
         archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
         exportPath: 'output/$(SDK)/$(Configuration)/'
-        exportOptions: 'auto'
-        # exportOptionsPlist: 
+        exportOptions: 'plist'
+        exportOptionsPlist: ''$(Build.SourcesDirectory)/ios/App/App/*.plist
         # Signing & provisioning
         signingOption: 'auto'
         teamId: '$(teamId)'
