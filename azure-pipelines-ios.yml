@@ -47,7 +47,7 @@ stages:
     - task: Xcode@5 #Xcode build and archive task 
       inputs:
         actions: 'build'
-        scheme: 'App' 
+        scheme: 'Pods-App' 
         sdk: '$(sdk)'
         configuration: '$(configuration)'
         xcWorkspacePath: '**/App.xcworkspace'
