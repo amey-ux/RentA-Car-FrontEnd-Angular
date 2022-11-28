@@ -50,7 +50,7 @@ stages:
         actions: 'build archive' 
         sdk: '$(sdk)'
         configuration: '$(configuration)'
-        xcWorkspacePath: '**/*.xcodeproj/*.xcworkspace'
+        xcWorkspacePath: '**/App.xcworkspace'
         xcodeVersion: default
         # Package options
         packageApp: true 
