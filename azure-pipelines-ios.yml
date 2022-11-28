@@ -39,7 +39,7 @@ stages:
 
     - script: |                       #install ioinic and capacitor 
         npm install i -g @ionic/cli
-        npm install @capacitor/core @capacitor/cli 
+        npm install @capacitor/core@latest @capacitor/cli@latest
         ionic cap build ios --prod
 
     - task: CocoaPods@0
