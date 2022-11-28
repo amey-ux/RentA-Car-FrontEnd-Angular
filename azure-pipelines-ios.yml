@@ -39,13 +39,15 @@ stages:
 
     - script: |                       #install ioinic and capacitor 
         npm install i -g @ionic/cli
-        npm install @capacitor/core@latest @capacitor/cli@latest
+        npm install @capacitor/core @capacitor/cli
         ionic cap build ios --prod
+        cd ios/App/App
+        pod install
 
-    - task: CocoaPods@0
-      inputs:    
-        forceRepoUpdate: false
-        workingDirectory: '$(Build.SourcesDirectory)/ios/App'
+    # - task: CocoaPods@0
+    #   inputs:    
+    #     forceRepoUpdate: false
+    #     workingDirectory: '$(Build.SourcesDirectory)/ios/App'
 
     - task: Xcode@5 #Xcode build and archive task 
       inputs:
