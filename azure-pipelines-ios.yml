@@ -46,7 +46,7 @@ stages:
 
     - task: Xcode@5 #Xcode build and archive task 
       inputs:
-        actions: 'build'
+        actions: 'build archive'
         scheme: 'Pods-App' 
         sdk: '$(sdk)'
         configuration: '$(configuration)'
@@ -54,14 +54,12 @@ stages:
         xcodeVersion: default
         # Package options
         packageApp: true 
-        #archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
-        # exportPath: 'output/$(SDK)/$(Configuration)/'
-        # exportOptions: 'auto'
-        # exportMethod: 'ad-hoc'
+        archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
+        exportPath: 'output/$(SDK)/$(Configuration)/'
+        exportOptions: 'auto'
+        exportMethod: 'ad-hoc'
         # Signing & provisioning
         signingOption: 'auto'
-        # signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
-        # provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
         teamId: '$(teamId)'
         
        
