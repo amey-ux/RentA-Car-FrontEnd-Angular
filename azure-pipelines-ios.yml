@@ -47,14 +47,15 @@ stages:
 
     - task: Xcode@5 #Xcode build and archive task 
       inputs:
-        actions: 'build archive' 
+        actions: 'build'
+        scheme: 'App' 
         sdk: '$(sdk)'
         configuration: '$(configuration)'
         xcWorkspacePath: '**/App.xcworkspace'
         xcodeVersion: default
         # Package options
         packageApp: true 
-        archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
+        #archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
         # exportPath: 'output/$(SDK)/$(Configuration)/'
         # exportOptions: 'auto'
         # exportMethod: 'ad-hoc'
