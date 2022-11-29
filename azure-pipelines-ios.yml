@@ -60,8 +60,11 @@ stages:
         exportMethod: 'ad-hoc'
         exportTeamId: '$(teamId)'
         # Signing & provisioning
-        signingOption: 'auto'
-        teamId: '$(teamId)'
+        signingOption: 'manual'
+        signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
+        provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
+        # signingOption: 'auto'
+        # teamId: '$(teamId)'
         args: '-allowProvisioningUpdates'
 
 
