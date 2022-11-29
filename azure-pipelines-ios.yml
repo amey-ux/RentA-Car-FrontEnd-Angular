@@ -70,12 +70,12 @@ stages:
 
         
        
-    - task: CopyFiles@2  #copy ipa files to artifact directory 
-      inputs:
-        contents: '**/*.ipa'
-        targetFolder: '$(build.artifactStagingDirectory)'
-        overWrite: true
-        flattenFolders: true
+    # - task: CopyFiles@2  #copy ipa files to artifact directory 
+    #   inputs:
+    #     contents: '**/*.ipa'
+    #     targetFolder: '$(build.artifactStagingDirectory)'
+    #     overWrite: true
+    #     flattenFolders: true
 
     # - task: PublishPipelineArtifact@1
     #   inputs:
