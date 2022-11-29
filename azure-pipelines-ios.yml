@@ -51,7 +51,7 @@ stages:
         sdk: '$(sdk)'
         configuration: '$(configuration)'
         xcWorkspacePath: '**/App.xcworkspace'
-        xcodeVersion: default
+        xcodeVersion: 13
         # Package options
         packageApp: true 
         archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
