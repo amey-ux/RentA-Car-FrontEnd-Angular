@@ -62,6 +62,7 @@ stages:
         # Signing & provisioning
         signingOption: 'auto'
         teamId: '$(teamId)'
+        args: '-allowProvisioningUpdates'
 
 
         
