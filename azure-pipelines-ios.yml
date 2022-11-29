@@ -40,7 +40,6 @@ stages:
     - script: |                       #install ioinic and capacitor 
         npm install i -g @ionic/cli
         npm install @capacitor/core @capacitor/cli
-        sudo gem install -n /usr/local/bin cocoapods -v 1.8.4
         ionic cap build ios --prod
         cd ios/App/App
         arch -x86_64 pod install
@@ -59,6 +58,7 @@ stages:
         exportPath: 'output/$(SDK)/$(Configuration)/'
         exportOptions: 'specify'
         exportMethod: 'ad-hoc'
+        exportTeamId: '$(teamId)'
         # Signing & provisioning
         signingOption: 'auto'
         teamId: '$(teamId)'
