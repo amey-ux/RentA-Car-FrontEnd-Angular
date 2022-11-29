@@ -55,10 +55,6 @@ stages:
         # Package options
         packageApp: true 
         archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
-        exportPath: 'output/$(SDK)/$(Configuration)/'
-        exportOptions: 'specify'
-        exportMethod: 'ad-hoc'
-        exportTeamId: '$(teamId)'
         # Signing & provisioning
         # signingOption: 'manual'
         # signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
