@@ -54,7 +54,7 @@ stages:
         xcodeVersion: 13
         # Package options
         packageApp: true 
-        # archivePath: '$(system.defaultworkingdirectory)/$(Build.Repository.ID).xcarchive'
+        archivePath: '$(system.defaultworkingdirectory)/$(Build.Repository.ID).xcarchive'
         exportPath: '$(system.defaultworkingdirectory)' 
         exportOptions: 'specify'
         exportMethod: 'ad-hoc'
@@ -64,7 +64,7 @@ stages:
         teamId: '$(teamId)'
                 
     - script: |
-        ls -l '$(system.defaultworkingdirectory)/build'
+        ls -l '$(system.defaultworkingdirectory)'
 
     # - task: CopyFiles@2  #copy ipa files to artifact directory 
     #   inputs:
