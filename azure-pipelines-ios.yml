@@ -55,13 +55,14 @@ stages:
         # Package options
         packageApp: true 
         archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
-        exportPath: 'output/$(SDK)/$(Configuration)' 
+        exportPath: '$(system.defaultworkingdirectory)' 
+        exportOptions: 'specify'
+        exportMethod: 'ad-hoc'
+        exportTeamId: '$(teamId)'
+        # Signing & provisioning
         signingOption: 'auto'
         teamId: '$(teamId)'
-        # args: '-allowProvisioningUpdates'
-
-
-        
+                
        
     - task: CopyFiles@2  #copy ipa files to artifact directory 
       inputs:
