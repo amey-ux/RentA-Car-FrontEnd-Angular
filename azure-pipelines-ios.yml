@@ -64,7 +64,7 @@ stages:
         teamId: '$(teamId)'
                 
     - script: |
-        ls -l '$(system.defaultworkingdirectory)'
+        mdfind Archives 
 
     # - task: CopyFiles@2  #copy ipa files to artifact directory 
     #   inputs:
