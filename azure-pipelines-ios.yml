@@ -55,10 +55,7 @@ stages:
         # Package options
         packageApp: true 
         archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
-        # Signing & provisioning
-        # signingOption: 'manual'
-        # signingIdentity: '$(APPLE_CERTIFICATE_SIGNING_IDENTITY)'
-        # provisioningProfileUuid: '$(APPLE_PROV_PROFILE_UUID)'
+        exportPath: 'output/$(SDK)/$(Configuration)' 
         signingOption: 'auto'
         teamId: '$(teamId)'
         # args: '-allowProvisioningUpdates'
@@ -66,14 +63,14 @@ stages:
 
         
        
-    # - task: CopyFiles@2  #copy ipa files to artifact directory 
-    #   inputs:
-    #     contents: '**/*.ipa'
-    #     targetFolder: '$(build.artifactStagingDirectory)'
-    #     overWrite: true
-    #     flattenFolders: true
+    - task: CopyFiles@2  #copy ipa files to artifact directory 
+      inputs:
+        contents: '**/*.ipa'
+        targetFolder: '$(build.artifactStagingDirectory)'
+        overWrite: true
+        flattenFolders: true
 
-    # - task: PublishPipelineArtifact@1
-    #   inputs:
-    #       targetPath: '$(Pipeline.Workspace)/a'
-    #       publishLocation: 'pipeline' 
+    - task: PublishPipelineArtifact@1
+      inputs:
+          targetPath: '$(Pipeline.Workspace)/a'
+          publishLocation: 'pipeline' 
