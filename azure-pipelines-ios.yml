@@ -64,16 +64,16 @@ stages:
         teamId: '$(teamId)'
                 
     - script: |
-          ls -l '$(system.defaultworkingdirectory)'
+        ls -l '$(system.defaultworkingdirectory)/build'
 
-    - task: CopyFiles@2  #copy ipa files to artifact directory 
-      inputs:
-        contents: '**/*.ipa'
-        targetFolder: '$(build.artifactStagingDirectory)'
+    # - task: CopyFiles@2  #copy ipa files to artifact directory 
+    #   inputs:
+    #     contents: '**/*.ipa'
+    #     targetFolder: '$(build.artifactStagingDirectory)'
         
        
 
-    - task: PublishPipelineArtifact@1
-      inputs:
-          targetPath: '$(Pipeline.Workspace)/a'
-          publishLocation: 'pipeline' 
+    # - task: PublishPipelineArtifact@1
+    #   inputs:
+    #       targetPath: '$(Pipeline.Workspace)/a'
+    #       publishLocation: 'pipeline' 
