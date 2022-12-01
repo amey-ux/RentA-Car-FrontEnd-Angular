@@ -54,7 +54,7 @@ stages:
         xcodeVersion: 13
         # Package options
         packageApp: true 
-        archivePath: 'output/$(SDK)/$(Configuration)/$(Build.Repository.ID).xcarchive'
+        archivePath: '$(system.defaultworkingdirectory)/$(Build.Repository.ID).xcarchive'
         exportPath: '$(system.defaultworkingdirectory)' 
         exportOptions: 'specify'
         exportMethod: 'ad-hoc'
