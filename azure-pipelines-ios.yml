@@ -18,7 +18,7 @@ stages:
     displayName: Build_ios
 
     variables:
-      sdk: 'iphoneos'
+      sdk: 'iphoneos16.0'
       configuration: 'Release'
       teamId : '96YU33LT3B'
 
@@ -47,7 +47,7 @@ stages:
     - task: Xcode@5 #Xcode build and archive task 
       inputs:
         actions: 'build archive'
-        scheme: 'Pods-App' 
+        scheme: 'App' 
         sdk: '$(sdk)'
         configuration: '$(configuration)'
         xcWorkspacePath: '**/App.xcworkspace'
