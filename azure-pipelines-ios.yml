@@ -67,8 +67,8 @@ stages:
         # exportTeamId: '$(teamId)'
 
     - script: |
-        /usr/bin/xcodebuild -exportArchive -archivePath  $(system.defaultworkingdirectory)/App.xcarchive \ 
-        -exportPath Output -exportOptionsPlist  $(system.defaultworkingdirectory)/ExportOptions.plist 
+        /usr/bin/xcodebuild -exportArchive -archivePath  $(system.defaultworkingdirectory)/App.xcarchive -exportPath Output -exportOptionsPlist  $(system.defaultworkingdirectory)/ExportOptions.plist
+         
         
                 
     
