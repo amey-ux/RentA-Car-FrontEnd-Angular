@@ -48,7 +48,7 @@ stages:
     - task: Xcode@5 #Xcode build and archive task 
       inputs:
         actions: 'build archive'
-        scheme: 'App' 
+        # scheme: 'App' 
         sdk: '$(sdk)'
         configuration: '$(configuration)'
         xcWorkspacePath: '**/App.xcworkspace'
@@ -57,13 +57,14 @@ stages:
         packageApp: true 
         # archivePath: '$(system.defaultworkingdirectory)/App.xcarchive'
         # exportPath: '$(system.defaultworkingdirectory)/App.ipa' 
-        exportOptions: 'specify'
-        exportMethod: 'ad-hoc'
-        exportTeamId: '$(teamId)'
+        exportOptions: 'plist'
+        # exportMethod: 'ad-hoc'
+        # exportTeamId: '$(teamId)'
         # Signing & provisioning
         signingOption: 'auto'
         teamId: '$(teamId)'
-        args: '-exportArchive -archivePath $(system.defaultworkingdirectory)/App.xcarhive -exportPath $(system.defaultworkingdirectory)/App.ipa'
+        args: '-exportArchive -archivePath $(system.defaultworkingdirectory)/App.xcarhive -exportPath $(system.defaultworkingdirectory)/App.ipa 
+                -exportOptionsPlist $(system.defaultworkingdirectory)/ExportOptions.plist'
                 
     
         
