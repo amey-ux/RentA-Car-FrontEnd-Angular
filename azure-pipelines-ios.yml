@@ -19,7 +19,7 @@ stages:
 
     variables:
       sdk: 'iphonesimulator'
-      configuration: 'Debug'
+      configuration: 'Release'
       teamId : '96YU33LT3B'
 
     steps: 
@@ -63,7 +63,7 @@ stages:
         # Signing & provisioning
         signingOption: 'auto'
         teamId: '$(teamId)'
-        args: '-exportArchive -exportFormat ipa -archivePath $(system.defaultworkingdirectory)/App.xcarhive $(system.defaultworkingdirectory)/App.ipa'
+        args: '-exportArchive -archivePath $(system.defaultworkingdirectory)/App.xcarhive -exportPath $(system.defaultworkingdirectory)/App.ipa'
                 
     
         
