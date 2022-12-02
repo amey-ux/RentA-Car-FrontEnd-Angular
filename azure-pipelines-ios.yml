@@ -18,7 +18,7 @@ stages:
     displayName: Build_ios
 
     variables:
-      sdk: 'macosx'
+      sdk: 'iphonesimulator'
       configuration: 'Release'
       teamId : '96YU33LT3B'
 
