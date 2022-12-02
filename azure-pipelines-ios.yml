@@ -18,7 +18,7 @@ stages:
     displayName: Build_ios
 
     variables:
-      sdk: 'iphonesimulator'
+      sdk: 'iphoneos'
       configuration: 'Release'
       teamId : '96YU33LT3B'
 
@@ -62,10 +62,10 @@ stages:
         # Signing & provisioning
         signingOption: 'auto'
         teamId: '$(teamId)'
-        -args: '-archivePath $(Agent.buildDirectory)/App'
                 
     - script: |
-        ls -l '$(Agent.BuildDirectory)/App'
+        ls -l '/Users/runner/Library/Developer/Xcode/Archives'
+        ls -l '$(system.defaultworkingdirectory)'
        
         
 
