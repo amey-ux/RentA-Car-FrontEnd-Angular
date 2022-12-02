@@ -50,8 +50,8 @@ stages:
         scheme: 'App' 
         sdk: '$(sdk)'
         configuration: '$(configuration)'
-        xcWorkspacePath: '**/App.xcworkspace'
-        xcodeVersion: default
+        xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
+        xcodeVersion: 13
         # Package options
         packageApp: true 
         archivePath: '$(system.defaultworkingdirectory)/App.xcarchive'
@@ -64,8 +64,10 @@ stages:
         teamId: '$(teamId)'
                 
     - script: |
-        ls -l '$(Agent.BuildDirectory)'
+        ls -l '$(Agent.BuildDirectory)/a'
+        ls -l '$(Agent.BuildDirectory)/b'
         ls -l '$(system.defaultworkingdirectory)'
+        ls -l '/Library/Developer/Xcode/Archives'
 
     # - task: CopyFiles@2  #copy ipa files to artifact directory 
     #   inputs:
