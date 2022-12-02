@@ -62,12 +62,12 @@ stages:
         # Signing & provisioning
         signingOption: 'auto'
         teamId: '$(teamId)'
+        -args: '-archivePath $(Agent.buildDirectory)/App'
                 
     - script: |
-        ls -l '$(Agent.BuildDirectory)/a'
-        ls -l '$(Agent.BuildDirectory)/b'
-        ls -l '$(system.defaultworkingdirectory)'
-        ls -l '/Library/Developer/Xcode/Archives'
+        ls -l '$(Agent.BuildDirectory)/App'
+       
+        
 
     # - task: CopyFiles@2  #copy ipa files to artifact directory 
     #   inputs:
