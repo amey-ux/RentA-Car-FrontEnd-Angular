@@ -11,7 +11,7 @@
 	<key>provisioningProfiles</key>
 	<dict>
 		<key>Trax.Flagship.Inspect</key>
-		<string>Test</string>
+		<string>Flagship.Inspect</string>
 	</dict>
 	<key>signingCertificate</key>
 	<string>Apple Distribution</string>
