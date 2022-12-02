@@ -19,7 +19,7 @@ stages:
 
     variables:
       sdk: 'iphonesimulator'
-      configuration: 'Release'
+      configuration: 'Debug'
       teamId : '96YU33LT3B'
 
     steps: 
@@ -55,19 +55,17 @@ stages:
         xcodeVersion: 13
         # Package options
         packageApp: true 
-        archivePath: '/Users/runner/Library/Developer/Xcode/App.xcarchive'
-        exportPath: '/Users/runner/Library/Developer/Xcode/App.ipa' 
+        # archivePath: '$(system.defaultworkingdirectory)/App.xcarchive'
+        # exportPath: '$(system.defaultworkingdirectory)/App.ipa' 
         exportOptions: 'specify'
         exportMethod: 'ad-hoc'
         exportTeamId: '$(teamId)'
         # Signing & provisioning
         signingOption: 'auto'
         teamId: '$(teamId)'
+        args: '-exportArchive -exportFormat ipa -archivePath $(system.defaultworkingdirectory)/App.xcarhive $(system.defaultworkingdirectory)/App.ipa'
                 
-    - script: |
-        ls -lrth '/Users/runner/Library/Developer/Xcode'
-        ls -l '$(system.defaultworkingdirectory)'
-       
+    
         
 
     # - task: CopyFiles@2  #copy ipa files to artifact directory 
