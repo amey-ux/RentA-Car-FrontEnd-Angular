@@ -43,25 +43,26 @@ stages:
         ionic cap build ios --prod
         cd ios/App/App
         arch -x86_64 pod install
+        chmod +x '/Users/runner/Library/Developer/Xcode/Archives'
 
-    - task: Xcode@5 #Xcode build and archive task 
-      inputs:
-        actions: 'build archive'
-        scheme: 'App' 
-        sdk: '$(sdk)'
-        configuration: '$(configuration)'
-        xcWorkspacePath: '**/App.xcworkspace'
-        xcodeVersion: 13
-        # Package options
-        packageApp: true 
-        archivePath: '$(system.defaultworkingdirectory)/App.xcarchive'
-        exportPath: '$(system.defaultworkingdirectory)' 
-        exportOptions: 'specify'
-        exportMethod: 'ad-hoc'
-        exportTeamId: '$(teamId)'
-        # Signing & provisioning
-        signingOption: 'auto'
-        teamId: '$(teamId)'
+    # - task: Xcode@5 #Xcode build and archive task 
+    #   inputs:
+    #     actions: 'build archive'
+    #     scheme: 'App' 
+    #     sdk: '$(sdk)'
+    #     configuration: '$(configuration)'
+    #     xcWorkspacePath: '**/App.xcworkspace'
+    #     xcodeVersion: 13
+    #     # Package options
+    #     packageApp: true 
+    #     archivePath: '$(system.defaultworkingdirectory)/App.xcarchive'
+    #     exportPath: '$(system.defaultworkingdirectory)' 
+    #     exportOptions: 'specify'
+    #     exportMethod: 'ad-hoc'
+    #     exportTeamId: '$(teamId)'
+    #     # Signing & provisioning
+    #     signingOption: 'auto'
+    #     teamId: '$(teamId)'
                 
     - script: |
         ls -lrth '/Users/runner/Library/Developer/Xcode'
