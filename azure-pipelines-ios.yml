@@ -58,13 +58,13 @@ stages:
         # archivePath: '$(system.defaultworkingdirectory)/App.xcarchive'
         # exportPath: '$(system.defaultworkingdirectory)/App.ipa' 
         exportOptions: 'plist'
+        exportOptionsPlist: '$(system.defaultworkingdirectory)/ExportOptions.plist'
         # exportMethod: 'ad-hoc'
         # exportTeamId: '$(teamId)'
         # Signing & provisioning
         signingOption: 'auto'
         teamId: '$(teamId)'
-        args: '-exportArchive -archivePath $(system.defaultworkingdirectory)/App.xcarhive -exportPath $(system.defaultworkingdirectory)/App.ipa 
-                -exportOptionsPlist $(system.defaultworkingdirectory)/ExportOptions.plist'
+        
                 
     
         
