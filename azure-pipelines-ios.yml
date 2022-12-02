@@ -51,10 +51,10 @@ stages:
         sdk: '$(sdk)'
         configuration: '$(configuration)'
         xcWorkspacePath: '**/App.xcworkspace'
-        xcodeVersion: 13
+        xcodeVersion: default
         # Package options
         packageApp: true 
-        archivePath: '$(system.defaultworkingdirectory)/$(Build.Repository.ID).xcarchive'
+        archivePath: '$(system.defaultworkingdirectory)/App.xcarchive'
         exportPath: '$(system.defaultworkingdirectory)' 
         exportOptions: 'specify'
         exportMethod: 'ad-hoc'
@@ -64,7 +64,8 @@ stages:
         teamId: '$(teamId)'
                 
     - script: |
-        mdfind Archives 
+        ls -l '$(Agent.BuildDirectory)'
+        ls -l '$(system.defaultworkingdirectory)'
 
     # - task: CopyFiles@2  #copy ipa files to artifact directory 
     #   inputs:
