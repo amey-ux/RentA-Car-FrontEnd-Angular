@@ -48,7 +48,7 @@ stages:
     - task: Xcode@5 #Xcode build and archive task 
       inputs:
         actions: 'build archive'
-        # scheme: 'App' 
+        scheme: 'App' 
         sdk: '$(sdk)'
         configuration: '$(configuration)'
         xcWorkspacePath: '**/App.xcworkspace'
