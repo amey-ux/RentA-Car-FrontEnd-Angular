@@ -64,7 +64,7 @@ stages:
         teamId: '$(teamId)'
                 
     - script: |
-        ls -l '/Users/runner/Library/Developer/Xcode/Archives'
+        ls -lrth '/Users/runner/Library/Developer/Xcode'
         ls -l '$(system.defaultworkingdirectory)'
        
         
