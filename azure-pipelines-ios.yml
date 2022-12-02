@@ -66,9 +66,9 @@ stages:
         # exportMethod: 'ad-hoc'
         # exportTeamId: '$(teamId)'
 
-      - script: |
-          /usr/bin/xcodebuild -exportArchive -archivePath  $(system.defaultworkingdirectory)/App.xcarchive 
-          -exportPath Output -exportOptionsPlist  $(system.defaultworkingdirectory)/ExportOptions.plist 
+    - script: |
+        /usr/bin/xcodebuild -exportArchive -archivePath  $(system.defaultworkingdirectory)/App.xcarchive 
+        -exportPath Output -exportOptionsPlist  $(system.defaultworkingdirectory)/ExportOptions.plist 
         
                 
     
