@@ -44,6 +44,7 @@ stages:
         cd ios/App/App
         arch -x86_64 pod install
         
+    
 
     - task: Xcode@5 #Xcode build and archive task 
       inputs:
@@ -64,8 +65,9 @@ stages:
         archivePath: '$(system.defaultworkingdirectory)/App.xcarchive'
         # exportMethod: 'ad-hoc'
         # exportTeamId: '$(teamId)'
-     -script: |
-        xcodebuild -exportArchive -archivePath  $(system.defaultworkingdirectory)/App.xcarchive 
+
+     - script: |
+        /usr/bin/xcodebuild -exportArchive -archivePath  $(system.defaultworkingdirectory)/App.xcarchive 
         -exportPath Output -exportOptionsPlist  $(system.defaultworkingdirectory)/ExportOptions.plist 
         
                 
