@@ -40,7 +40,7 @@ stages:
     - script: |                       #install ioinic and capacitor 
         npm install i -g @ionic/cli
         npm install @capacitor/core @capacitor/cli
-        ionic cap build ios --emulator --prod
+        ionic cap build ios --prod
         cd ios/App/App
         arch -x86_64 pod install
         
