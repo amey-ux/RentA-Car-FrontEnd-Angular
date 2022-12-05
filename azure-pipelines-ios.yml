@@ -68,7 +68,7 @@ stages:
 
     - script: |
         /usr/bin/xcodebuild archive -sdk iphonesimulator -configuration Release -workspace $(system.defaultworkingdirectory)/ios/App/App.xcworkspace -scheme App -archivePath  $(system.defaultworkingdirectory)/App.xcarchive CODE_SIGN_STYLE=Automatic DEVELOPMENT_TEAM=96YU33LT3B
-        ls -l $(system.defaultworkingdirectory)
+        ls -lrth $(system.defaultworkingdirectory)
 
     # - script: |
     #     /usr/bin/xcodebuild -exportArchive -archivePath  $(system.defaultworkingdirectory)/App.xcarchive -exportPath $(system.defaultworkingdirectory) -exportOptionsPlist  $(system.defaultworkingdirectory)/ExportOptions.plist

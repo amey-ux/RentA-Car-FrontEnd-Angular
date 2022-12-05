@@ -10,7 +10,7 @@
 	<string>ad-hoc</string>
 	<key>provisioningProfiles</key>
 	<dict>
-		<key>96YU33LT3B.Trax.Flagship.Inspect</key>
+		<key>Trax.Flagship.Inspect</key>
 		<string>bd0de359-d5e4-444e-b83c-26c01bed5967</string>
 	</dict>
 	<key>signingCertificate</key>
