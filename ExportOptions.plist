@@ -4,8 +4,8 @@
 <dict>
 	<key>compileBitcode</key>
 	<false/>
-	<key>destination</key>
-	<string>export</string>
+	<!-- <key>destination</key>
+	<string>export</string> -->
 	<key>method</key>
 	<string>ad-hoc</string>
 	<key>provisioningProfiles</key>
