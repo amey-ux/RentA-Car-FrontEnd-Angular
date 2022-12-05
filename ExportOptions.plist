@@ -7,7 +7,7 @@
 	<!-- <key>destination</key>
 	<string>export</string> -->
 	<key>method</key>
-	<string>development</string>
+	<string>package</string>
 	<key>provisioningProfiles</key>
 	<dict>
 		<key>96YU33LT3B.Trax.Flagship.Inspect</key>
