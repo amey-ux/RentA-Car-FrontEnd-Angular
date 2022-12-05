@@ -7,10 +7,10 @@
 	<!-- <key>destination</key>
 	<string>export</string> -->
 	<key>method</key>
-	<string>app-store</string>
+	<string>development</string>
 	<key>provisioningProfiles</key>
 	<dict>
-		<key>Trax.Flagship.Inspect</key>
+		<key>96YU33LT3B.Trax.Flagship.Inspect</key>
 		<string>bd0de359-d5e4-444e-b83c-26c01bed5967</string>
 	</dict>
 	<key>signingCertificate</key>
